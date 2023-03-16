@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+
+# typescript
+*.tsbuildinfo
+
+.DS_Store
+**/.DS_Store
+
+.vscode
+.fleet
