@@ -3,3 +3,9 @@
 
 # typescript
 *.tsbuildinfo
+
+.DS_Store
+**/.DS_Store
+
+.vscode
+.fleet
