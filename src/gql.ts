@@ -1,13 +1,17 @@
 export default class lib_gql {
-  public static combineQueries(queries: Array<string>): string {
-    let combinedQuery = "query {\n";
+  public static combineQueries(...queries) {
+    const combinedQueryContent = queries
+      .map((query) => {
+        const lines = query.trim().split("\n");
+        const contentLines = lines.slice(1, -1);
+        return contentLines.map((line) => line.trim()).join("\n");
+      })
+      .join("\n");
 
-    queries.forEach((query) => {
-      combinedQuery += `${query}\n`;
-    });
-
-    combinedQuery += "}";
-
-    return combinedQuery;
+    return `
+        query {
+            ${combinedQueryContent}
+        }
+    `;
   }
 }
